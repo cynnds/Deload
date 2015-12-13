@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Deload.Models
@@ -9,7 +10,10 @@ namespace Deload.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        public System.DateTime? DOB { get; set; }
+        [Required]
+        [Display(Name="Date of birth")]
+        [DataType(DataType.Date)]
+        public DateTime DOB { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
     }

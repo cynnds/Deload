@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -12,6 +13,7 @@ namespace Deload.Models
         public System.DateTime? DOB { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
+        public virtual ICollection<WorkoutModels> Workouts { get; set; } 
          
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
